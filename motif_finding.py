@@ -53,8 +53,8 @@ def brute_force_motif_search(dna, t, n, l):
                 s[j] = 0 # reset start index to zero
                 j -= 1 # move to the next dna sequence
 
-    print("Motif:", bestMotif)
-    print("Score:", bestScore)
+    print("Motif is:", bestMotif)
+    print("Score is:", bestScore)
 
 
 def hamming_dist(word, seq):
