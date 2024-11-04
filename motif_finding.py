@@ -6,18 +6,18 @@ def brute_force_motif_search(dna, t, n, l):
     bestScore = 0
     bestMotif = None
 
-    s = [0] * t  # Initialize starting indices to 0 for all sequences
-    total_iterations = (n - l + 1) ** t  # Calculate total iterations based on the length of the sequences and the motif length
+    s = [0] * t  #Initialize starting indices to 0 for all sequences
+    total_iterations = (n - l + 1) ** t  #Calculate total iterations based on the length of the sequences and the motif length
 
     for _ in range(total_iterations):
         current_motifs = []
         profile_matrix = {'A': [0]*l, 'C': [0]*l, 'G': [0]*l, 'T': [0]*l}
         for i in range(t):
             current_sequence = dna[i]
-            start = s[i]  # Start index
+            start = s[i]  #Start index
             current_motifs.append(current_sequence[start:start + l])
 
-        # profile matrix
+        #profile matrix
         for j in range(l):
             counts = {'A': 0, 'C': 0, 'G': 0, 'T': 0}
             for motif in current_motifs:
